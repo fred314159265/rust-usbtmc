@@ -46,6 +46,11 @@ impl Instrument {
         }
     }
 
+    /// Update the Instrument communication timeout duration.
+    pub fn set_timeout(&mut self, timeout: Duration) {
+        self.timeout = timeout;
+    }
+
     ///
     ///
     ///
