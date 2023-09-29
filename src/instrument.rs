@@ -103,7 +103,7 @@ impl Instrument {
                 let buf = &mut [0u8; 1024];
                 handle.read_bulk(endpoint.address, buf, self.timeout)?;
 
-                let line_size = buf
+                let line_size = 12 + buf[12..]
                     .iter()
                     .take_while(|c| **c != b'\n' && **c != b'\r')
                     .count();
